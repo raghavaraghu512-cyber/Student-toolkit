@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Contact Student Toolkit - Get in touch with us for questions, suggestions, or support.">
+
+    <meta name="keywords" content="Student Toolkit Contact, Contact Us, Student Calculator Support">
+
+    <meta name="author" content="Student Toolkit">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="theme-color" content="#2563eb">
+
+    <title>Contact Us | Student Toolkit</title>
+
+    <link rel="icon" href="assets/favicon.ico">
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init({
+            publicKey: "LpWC4kNWoROPY3vJt"
+        });
+    </script>
+
+    <!-- JavaScript -->
+    <script defer src="js/app.js"></script>
+
+    <style>
+
+.contact-page{
+    padding:80px 0;
+    background:#f7f9fc;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.contact-info h1{
+    font-size:42px;
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.contact-info p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.contact-card{
+    background:#fff;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.contact-card h3{
+    color:#2563eb;
+    margin-bottom:8px;
+}
+
+.contact-form{
+    background:#fff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.contact-form h2{
+    margin-bottom:25px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+.contact-form textarea{
+    height:160px;
+    resize:none;
+}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#2563eb;
+    color:#fff;
+    font-size:16px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    background:#1d4ed8;
+}
+
+#status{
+    margin-top:15px;
+    font-weight:600;
+    text-align:center;
+}
+
+@media(max-width:768px){
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.contact-info{
+text-align:center;
+}
+
+.contact-info h1{
+font-size:34px;
+}
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+
+<a href="index.html">
+<img src="assets/logo.jpeg" alt="Student Toolkit Logo">
+</a>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a class="active" href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button id="themeToggle" aria-label="Toggle dark mode">
+🌙
+</button>
+
+</div>
+
+</header>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-page">
+
+<div class="container contact-grid">
+
+<div class="contact-info">
+
+<h1>Contact Student Toolkit</h1>
+
+<p>
+
+Have a question, feedback, feature request, or found a bug?
+We're always happy to hear from students.
+Fill out the contact form and we'll respond as soon as possible.
+
+</p>
+
+<div class="contact-card">
+
+<h3>📧 Email</h3>
+
+<p>raghavaraghu512@gmail.com</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>⚡ Response Time</h3>
+
+<p>Within 24 Hours</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>🌐 Website</h3>
+
+<p>Student Toolkit</p>
+
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<h2>Send us a Message</h2>
+
+<form id="contactForm">
+
+<input
+type="text"
+name="user_name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+name="user_email"
+placeholder="Your Email"
+required>
+
+<input
+type="text"
+name="subject"
+placeholder="Subject"
+required>
+
+<textarea
+name="message"
+placeholder="Type your message..."
+required></textarea>
+
+<button type="submit">
+
+Send Message 🚀
+
+</button>
+
+<p id="status"></p>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= EMAIL JS ================= -->
+
+<script>
+
+const form = document.getElementById("contactForm");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    status.style.color = "#2563eb";
+    status.innerHTML = "Sending your message...";
+
+    emailjs.sendForm(
+        "service_byq9wks",
+        "template_pn2onah",
+        this
+    )
+
+    .then(function(){
+
+        status.style.color = "green";
+        status.innerHTML = "✅ Thank you! Your message has been sent successfully.";
+
+        form.reset();
+
+    })
+
+    .catch(function(error){
+
+        status.style.color = "red";
+        status.innerHTML = "❌ Failed to send message. Please try again later.";
+
+        console.error(error);
+
+    });
+
+});
+
+</script>
+
+
+
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="features">
+
+<div class="container">
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<h3>
+How quickly will you reply?
+</h3>
+
+<p>
+We usually respond to all messages within 24 hours.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>
+Can I request a new calculator?
+</h3>
+
+<p>
+Yes! We welcome suggestions for new student tools and calculators.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>
+Is Student Toolkit free?
+</h3>
+
+<p>
+Yes. All calculators on Student Toolkit are completely free to use.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>
+Found a bug?
+</h3>
+
+<p>
+Please report it using the contact form so we can fix it as soon as possible.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+Thank You for Visiting Student Toolkit
+</h2>
+
+<p>
+We're constantly improving our tools based on student feedback.
+</p>
+
+<a href="index.html" class="btn">
+
+Back to Home
+
+</a>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>
+Student Toolkit
+</h3>
+
+<p>
+Smart online calculators for every student.
+</p>
+
+</div>
+
+<div>
+
+<h4>
+Quick Links
+</h4>
+
+<ul>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+
+<li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+Calculators
+</h4>
+
+<ul>
+
+<li><a href="calculators/cgpa-calculator.html">CGPA</a></li>
+
+<li><a href="calculators/attendance-calculator.html">Attendance</a></li>
+
+<li><a href="calculators/percentage-calculator.html">Percentage</a></li>
+
+<li><a href="calculators/age-calculator.html">Age</a></li>
+
+<li><a href="calculators/unit-converter.html">Unit Converter</a></li>
+
+<li><a href="calculators/scientific-calculator.html">Scientific Calculator</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Student Toolkit. All Rights Reserved.
+
+</div>
+
+</footer>
+
+</body>
+
+</html>

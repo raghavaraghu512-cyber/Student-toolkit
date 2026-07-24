@@ -1,0 +1,317 @@
+/* ==========================================
+   STUDENT TOOLKIT
+   responsive.css
+========================================== */
+
+/* ===========================
+   Large Tablets
+=========================== */
+
+@media (max-width: 1024px){
+
+.container{
+    width:92%;
+}
+
+.hero-content{
+    gap:40px;
+}
+
+.hero h1{
+    font-size:44px;
+}
+
+.tool-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.feature-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.footer-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.stats .container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.calculator-container{
+    max-width:750px;
+}
+
+}
+
+/* ===========================
+   Tablets
+=========================== */
+
+@media (max-width:768px){
+
+header .container{
+    flex-direction:column;
+    gap:20px;
+}
+
+.logo img{
+    width:160px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+.hero{
+    padding:60px 0;
+}
+
+.hero-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero p{
+    font-size:17px;
+    margin:auto;
+}
+
+.hero img{
+    max-width:350px;
+    margin-top:30px;
+}
+
+.btn{
+    margin-top:25px;
+}
+
+section{
+    padding:60px 0;
+}
+
+section h2{
+    font-size:30px;
+}
+
+.tool-grid,
+.feature-grid,
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+.stats .container{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.calculator-hero{
+    padding:60px 20px;
+}
+
+.calculator-hero h1{
+    font-size:34px;
+}
+
+.calculator-card{
+    padding:25px;
+}
+
+.subject-row{
+    grid-template-columns:1fr;
+}
+
+.converter-grid{
+    grid-template-columns:1fr;
+}
+
+.buttons{
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.buttons button{
+    padding:15px;
+    font-size:16px;
+}
+
+.display{
+    font-size:24px;
+}
+
+.table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+}
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width:576px){
+
+.container{
+    width:95%;
+}
+
+.hero{
+    padding:50px 0;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:15px;
+}
+
+.hero img{
+    max-width:280px;
+}
+
+.calculator-hero{
+    padding:50px 15px;
+}
+
+.calculator-hero h1{
+    font-size:28px;
+}
+
+.calculator-hero p{
+    font-size:15px;
+}
+
+.calculator-card{
+    padding:20px;
+}
+
+.calculator-card h2{
+    font-size:24px;
+}
+
+.form-group input,
+.form-group select{
+    font-size:15px;
+    padding:12px;
+}
+
+.btn,
+.btn-primary,
+.btn-secondary{
+    width:100%;
+    font-size:15px;
+    padding:14px;
+}
+
+.tool-card{
+    padding:25px 20px;
+}
+
+.tool-card img{
+    width:70px;
+    height:70px;
+}
+
+.tool-card h3{
+    font-size:20px;
+}
+
+.feature-card{
+    padding:25px 20px;
+}
+
+.stat-box{
+    padding:25px;
+}
+
+.stat-box h2{
+    font-size:36px;
+}
+
+.footer-grid{
+    text-align:center;
+}
+
+.footer-grid ul{
+    padding:0;
+}
+
+.footer-grid li{
+    margin-bottom:10px;
+}
+
+#themeToggle{
+    width:42px;
+    height:42px;
+}
+
+#topBtn{
+    width:45px;
+    height:45px;
+    font-size:18px;
+}
+
+}
+
+/* ===========================
+   Small Mobile
+=========================== */
+
+@media (max-width:400px){
+
+.hero h1{
+    font-size:26px;
+}
+
+.hero p{
+    font-size:14px;
+}
+
+.calculator-hero h1{
+    font-size:24px;
+}
+
+.calculator-card{
+    padding:15px;
+}
+
+.tool-card img{
+    width:60px;
+    height:60px;
+}
+
+.tool-card h3{
+    font-size:18px;
+}
+
+.buttons{
+    gap:8px;
+}
+
+.buttons button{
+    padding:12px;
+    font-size:14px;
+}
+
+.display{
+    height:60px;
+    font-size:20px;
+}
+
+.stats .container{
+    grid-template-columns:1fr;
+}
+
+}
+
+/* ==========================================
+   END OF responsive.css
+========================================== */

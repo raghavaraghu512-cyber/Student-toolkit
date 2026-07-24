@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unit Converter | Student Toolkit</title>
+
+<meta name="description" content="Free Online Unit Converter for Length, Weight and Temperature.">
+
+<link rel="icon" href="../assets/favicon.ico">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/calculator.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+
+    <div class="logo">
+
+        <a href="index.html">
+
+            <img 
+            src="../assets/logo.jpeg"
+            alt="Student Toolkit ">
+
+        </a>
+
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a class="active" href="index.html">
+                    Home
+                </a>
+            </li>
+
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+
+    <button 
+    id="themeToggle"
+    aria-label="Toggle dark mode">
+
+        🌙
+
+    </button>
+
+
+</div>
+
+</header>
+
+<section class="calculator-hero">
+
+<div class="container">
+
+<h1>Unit Converter</h1>
+
+<p>
+
+Convert Length, Weight and Temperature instantly.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="calculator-section">
+
+<div class="calculator-container">
+
+<div class="calculator-card">
+
+<h2>Unit Converter</h2>
+
+<div class="form-group">
+
+<label>Conversion Type</label>
+
+<select id="converterType">
+
+<option value="length">Length</option>
+
+<option value="weight">Weight</option>
+
+<option value="temperature">Temperature</option>
+
+</select>
+
+</div>
+
+<div class="converter-grid">
+
+<div class="form-group">
+
+<label>From Unit</label>
+
+<select id="fromUnit">
+
+<option value="meter">Meter</option>
+<option value="kilometer">Kilometer</option>
+<option value="centimeter">Centimeter</option>
+<option value="millimeter">Millimeter</option>
+<option value="inch">Inch</option>
+<option value="foot">Foot</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>To Unit</label>
+
+<select id="toUnit">
+
+<option value="kilometer">Kilometer</option>
+<option value="meter">Meter</option>
+<option value="centimeter">Centimeter</option>
+<option value="millimeter">Millimeter</option>
+<option value="inch">Inch</option>
+<option value="foot">Foot</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Value</label>
+
+<input
+type="number"
+id="inputValue"
+placeholder="Enter Value">
+
+</div>
+
+<button
+class="btn-primary"
+id="convertButton">
+
+Convert
+
+</button>
+
+<button
+class="btn-secondary"
+id="resetConverter">
+
+Reset
+
+</button>
+
+<div
+class="result-box"
+id="converterResult">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="info-box">
+
+<div class="container">
+
+<h2>Supported Conversions</h2>
+
+<ul>
+
+<li>Meter ↔ Kilometer</li>
+<li>Meter ↔ Centimeter</li>
+<li>Meter ↔ Millimeter</li>
+<li>Meter ↔ Inch</li>
+<li>Meter ↔ Foot</li>
+<li>Kilogram ↔ Gram</li>
+<li>Kilogram ↔ Pound</li>
+<li>Kilogram ↔ Ounce</li>
+<li>Celsius ↔ Fahrenheit</li>
+<li>Celsius ↔ Kelvin</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>Student Toolkit</h3>
+
+<p>
+
+Free online calculators for students.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul>
+
+<li><a href="../index.html">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../privacy-policy.html">Privacy Policy</a></li>
+<li><a href="../terms-and-conditions.html">Terms & Conditions</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Calculators</h4>
+
+<ul>
+
+<li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
+<li><a href="attendance-calculator.html">Attendance Calculator</a></li>
+<li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+<li><a href="age-calculator.html">Age Calculator</a></li>
+<li><a href="scientific-calculator.html">Scientific Calculator</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Student Toolkit. All Rights Reserved.
+
+</div>
+
+</footer>
+
+<script src="../js/app.js"></script>
+<script src="../js/converter.js"></script>
+
+</body>
+</html>

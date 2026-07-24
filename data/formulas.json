@@ -1,0 +1,47 @@
+{
+    "calculators": [
+
+        {
+            "name": "CGPA Calculator",
+            "slug": "cgpa-calculator",
+            "formula": "CGPA = Σ(Grade Point × Credit) ÷ Σ Credits",
+            "description": "Calculate your overall CGPA using subject grades and credits."
+        },
+
+        {
+            "name": "Attendance Calculator",
+            "slug": "attendance-calculator",
+            "formula": "Attendance % = (Classes Attended ÷ Total Classes) × 100",
+            "description": "Calculate current attendance percentage and required classes."
+        },
+
+        {
+            "name": "Percentage Calculator",
+            "slug": "percentage-calculator",
+            "formula": "Percentage = (Obtained Marks ÷ Total Marks) × 100",
+            "description": "Find exam and academic percentage easily."
+        },
+
+        {
+            "name": "Age Calculator",
+            "slug": "age-calculator",
+            "formula": "Age = Current Date − Date of Birth",
+            "description": "Calculate exact age in years, months and days."
+        },
+
+        {
+            "name": "Unit Converter",
+            "slug": "unit-converter",
+            "formula": "Value × Conversion Factor",
+            "description": "Convert length, weight and temperature units."
+        },
+
+        {
+            "name": "Scientific Calculator",
+            "slug": "scientific-calculator",
+            "formula": "Mathematical Functions",
+            "description": "Perform scientific calculations including trigonometry and logarithms."
+        }
+
+    ]
+}

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Attendance Calculator | Student Toolkit</title>
+
+
+<meta name="description" content="Calculate attendance percentage and required classes using Student Toolkit.">
+
+
+<link rel="icon" href="../assets/favicon.ico">
+
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/calculator.css">
+
+
+<script defer src="../js/app.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container">
+
+
+<div class="logo">
+
+<a href="../index.html">
+
+<img src="../assets/logo.jpeg" alt="Student Toolkit">
+
+</a>
+
+</div>
+
+
+<nav>
+
+<ul>
+
+<li>
+<a href="../index.html">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="../about.html">
+About
+</a>
+</li>
+
+
+<li>
+<a href="../contact.html">
+Contact
+</a>
+</li>
+
+
+</ul>
+
+</nav>
+
+
+<button id="themeToggle">
+🌙
+</button>
+
+
+</div>
+
+</header>
+
+
+
+
+
+<!-- HERO -->
+
+<section class="calculator-hero">
+
+<div class="container">
+
+
+<h1>
+Attendance Calculator
+</h1>
+
+
+<p>
+Calculate your attendance percentage and required classes.
+</p>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- CALCULATOR -->
+
+
+<section class="calculator-section">
+
+
+<div class="calculator-container">
+
+
+<div class="calculator-card">
+
+
+<h2>
+Attendance Calculator
+</h2>
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Classes Attended
+</label>
+
+
+<input 
+type="number"
+id="attendedClasses"
+placeholder="Enter attended classes">
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Total Classes
+</label>
+
+
+<input 
+type="number"
+id="totalClasses"
+placeholder="Enter total classes">
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Target Attendance Percentage
+</label>
+
+
+<input 
+type="number"
+id="requiredAttendance"
+value="75">
+
+
+</div>
+
+
+
+
+
+<div class="button-group">
+
+
+<button 
+class="btn-primary"
+onclick="calculateAttendance()">
+
+Calculate
+
+</button>
+
+
+
+<button 
+class="btn-secondary"
+onclick="resetAttendance()">
+
+Reset
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div 
+class="result-box"
+id="attendanceResult">
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- INFO -->
+
+
+<section class="info-box">
+
+<div class="container">
+
+
+<h2>
+Attendance Formula
+</h2>
+
+
+<p>
+
+Attendance % =
+<br>
+
+(Classes Attended ÷ Total Classes) × 100
+
+</p>
+
+
+<h3>
+Example
+</h3>
+
+
+<p>
+
+If you attended 48 classes out of 60:
+
+</p>
+
+
+<p>
+
+(48 ÷ 60) × 100 = <b>80%</b>
+
+</p>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+<div class="container">
+
+
+<h3>
+Student Toolkit
+</h3>
+
+
+<p>
+Free calculators for students.
+</p>
+
+
+<p>
+© <span id="year"></span> Student Toolkit. All Rights Reserved.
+</p>
+
+
+</div>
+
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+function calculateAttendance(){
+
+
+let attendedValue =
+document.getElementById("attendedClasses").value;
+
+
+let totalValue =
+document.getElementById("totalClasses").value;
+
+
+let requiredValue =
+document.getElementById("requiredAttendance").value;
+
+
+
+let result =
+document.getElementById("attendanceResult");
+
+
+
+
+if(
+attendedValue === "" ||
+totalValue === "" ||
+requiredValue === ""
+){
+
+
+result.style.display="block";
+
+
+result.innerHTML = `
+
+<p class="error">
+Please enter all values.
+</p>
+
+`;
+
+
+return;
+
+}
+
+
+
+
+let attended =
+Number(attendedValue);
+
+
+let total =
+Number(totalValue);
+
+
+let required =
+Number(requiredValue);
+
+
+
+
+
+if(
+total <= 0 ||
+attended < 0 ||
+attended > total
+){
+
+
+result.style.display="block";
+
+
+result.innerHTML = `
+
+<p class="error">
+Please enter valid class values.
+</p>
+
+`;
+
+
+return;
+
+
+}
+
+
+
+
+
+let percentage =
+(attended / total) * 100;
+
+
+
+let message = "";
+
+
+
+
+
+if(percentage >= required){
+
+
+message = `
+
+<h3>
+Attendance Result
+</h3>
+
+
+<p>
+Current Attendance:
+<b>${percentage.toFixed(2)}%</b>
+</p>
+
+
+<p>
+Target Attendance:
+<b>${required}%</b>
+</p>
+
+
+<p>
+You have already reached your target attendance ✅
+</p>
+
+
+`;
+
+
+
+}
+
+else{
+
+
+let needed = Math.ceil(
+
+(
+(required / 100) * total - attended
+)
+/
+(1 - required / 100)
+
+);
+
+
+
+message = `
+
+<h3>
+Attendance Result
+</h3>
+
+
+<p>
+Current Attendance:
+<b>${percentage.toFixed(2)}%</b>
+</p>
+
+
+<p>
+Target Attendance:
+<b>${required}%</b>
+</p>
+
+
+<p>
+You need to attend 
+<b>${needed}</b>
+more classes.
+</p>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+result.style.display="block";
+
+
+result.innerHTML = message;
+
+
+
+}
+
+
+
+
+
+
+
+function resetAttendance(){
+
+
+
+document.getElementById(
+"attendedClasses"
+).value="";
+
+
+
+document.getElementById(
+"totalClasses"
+).value="";
+
+
+
+document.getElementById(
+"requiredAttendance"
+).value="75";
+
+
+
+let result =
+document.getElementById(
+"attendanceResult"
+);
+
+
+
+result.style.display="none";
+
+
+result.innerHTML="";
+
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
